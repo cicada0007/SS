@@ -1,0 +1,44 @@
+Here's a guide using the `/mnt` directory for file transfer between Ubuntu and Windows.
+
+---
+
+### 1. Aim
+To transfer files from Ubuntu to Windows using the `/mnt` directory.
+
+---
+
+### 2. Step-by-Step Procedure
+
+#### Step 1: Set Up a Shared Folder in VirtualBox (If Ubuntu is a Virtual Machine)
+1. **Install Guest Additions in Ubuntu**:
+   - In VirtualBox, go to **Devices > Insert Guest Additions CD Image…**.
+   - Follow the on-screen prompts to complete the installation.
+
+2. **Create a Shared Folder in VirtualBox**:
+   - Go to **VirtualBox > Settings > Shared Folders**.
+   - Click the **+** icon to add a new folder.
+   - Choose a folder on Windows you want to share, and set it as **Auto-mount** and **Make Permanent**.
+
+3. **Access Shared Folder in Ubuntu**:
+   - In Ubuntu, the shared folder will automatically be mounted under the `/mnt` directory.
+   - Open a terminal and navigate to the folder:
+     ```bash
+     cd /mnt/shared_folder_name
+     ```
+   - Replace `shared_folder_name` with the name of the folder you set up in VirtualBox.
+
+#### Step 2: Copy Files to Shared Folder
+1. **Copy Files in Ubuntu**:
+   - Use the `cp` command to copy files to the shared folder:
+     ```bash
+     cp /path/to/your/file /mnt/shared_folder_name/
+     ```
+   - Replace `/path/to/your/file` with the path to the file you want to transfer.
+
+#### Step 3: Access Files in Windows
+1. **Open the Shared Folder** in Windows, where you’ll see the transferred files.
+
+---
+
+### 3. Result
+The files are successfully transferred from Ubuntu to Windows using the shared folder in `/mnt`. You can now access them directly from the Windows system.
